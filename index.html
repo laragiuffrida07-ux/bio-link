@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linktree di Lara</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(135deg, #b1bfdf, #d6e0f5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  transition: all 0.4s ease;
+}
+
+/* HEADER */
+.profile-img {
+  width: 110px;
+  height: 120px;
+  border-radius: 60%;
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease;
+}
+
+h1 {
+  margin: 15px 0 5px;
+  font-size: 24px;
+  color: #FFE4E1;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #FAF0E6;
+}
+
+/* BOTTONI */
+.container {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  color: #333;
+  text-decoration: none;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  animation: slideUp 0.6s ease;
+}
+
+.btn i {
+  margin-right: 12px;
+  font-size: 1.4rem;
+}
+
+.btn:hover {
+  background-color: #ff78a9;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* DARK MODE */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  color: white;
+}
+
+body.dark-mode .btn {
+  background: rgba(50,50,50,0.8);
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* BOTTONE SWITCH */
+.theme-switch {
+  margin-top: 20px;
+}
+
+#theme-toggle {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+/* ANIMAZIONI */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="483CA898-FEE3-4EA9-AC27-BBD917F84419.jpeg" 
+       class="profile-img" 
+       alt="Foto profilo di Lara Giuffrida">
+  <h1>@lara.giuffrida</h1>
+  <p>Studentessa</p>
+</header>
+
+<main class="container">
+  <a href="https://www.instagram.com/lara.giuffrida" target="_blank" class="btn">
+    <i class="fab fa-instagram"></i> Seguimi su Instagram
+  </a>
+
+  <a href="https://github.com/laragiuffrida07-ux" target="_blank" class="btn">
+    <i class="fab fa-github"></i> I miei progetti GitHub
+  </a>
+
+  <a href="https://www.linkedin.com/in/lara-giuffrida-2b067a3b9/" target="_blank" class="btn">
+    <i class="fab fa-linkedin"></i> Profilo Professionale
+  </a>
+
+  <a href="https://youtube.com/@laragiuffrida133" target="_blank" class="btn">
+    <i class="fab fa-youtube"></i> Iscriviti al Canale
+  </a>
+
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeex2jJ_AZfXdFrh7nMQhdSernGOjs17QsbuH6Joy7ExrR2tQ/viewform?embedded=true" class="btn">
+    <i class="fas fa-envelope"></i> Scrivimi qui
+  </a>
+
+</main>
+
+<footer>
+  <p>Realizzato con ❤️ per il corso di Informatica</p>
+</footer>
+
+<div class="theme-switch">
+  <button id="theme-toggle">🌙 Modalità Notte</button>
+</div>
+
+<script>
+// CARICAMENTO
+document.addEventListener("DOMContentLoaded", function() {
+
+  alert("Benvenuto nel mio Linktree!");
+
+  const pulsante = document.getElementById('theme-toggle');
+  const corpo = document.body;
+
+  // Mantiene il tema salvato
+  if (localStorage.getItem("tema") === "dark") {
+    corpo.classList.add("dark-mode");
+    pulsante.innerText = "☀️ Modalità Luce";
+  }
+
+  pulsante.addEventListener('click', () => {
+
+    corpo.classList.toggle('dark-mode');
+
+    if (corpo.classList.contains('dark-mode')) {
+      pulsante.innerText = "☀️ Modalità Luce";
+      localStorage.setItem("tema", "dark");
+    } else {
+      pulsante.innerText = "🌙 Modalità Notte";
+      localStorage.setItem("tema", "light");
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
