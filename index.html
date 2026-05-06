@@ -265,6 +265,8 @@ const email = document.getElementById('campoEmail').value; if (!email.includes('
 e.preventDefault(); // Blocca l'invio se l'email è sbagliata
 alert("Inserisci un indirizzo email valido!"); }
 });
+  $(document).ready(function() {
+$("table").hide().fadeIn(2000); // Nasconde la tabella e la mostra in 2 secondi })
 </script>
 
 </body>
