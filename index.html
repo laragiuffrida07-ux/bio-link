@@ -256,6 +256,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+  document.getElementById('nomeForm').addEventListener('submit', function(e) {
+const email = document.getElementById('campoEmail').value; if (!email.includes('@')) {
+e.preventDefault(); // Blocca l'invio se l'email è sbagliata
+alert("Inserisci un indirizzo email valido!"); }
+});
 </script>
 
 </body>
