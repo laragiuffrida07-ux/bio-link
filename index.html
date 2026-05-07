@@ -89,6 +89,11 @@ body.dark-mode {
   background: linear-gradient(135deg, #000000,#483d8b,#000000);
   color: white;
 }
+  body.dark-mode .btn {
+  background: rgba(50,50,50,0.8);
+  color: #fff;
+  border: 1px solid #555;
+}
 
 .theme-switch {
   margin-top: 20px;
@@ -228,6 +233,9 @@ th, td {
   </a>
 
 </main>
+  <div class="theme-switch">
+  <button id="theme-toggle">🌙 Modalità Notte</button>
+</div>
 
 
 
@@ -335,9 +343,7 @@ $(document).ready(function() {
 });
 
 </script>
-  <div class="theme-switch">
-  <button id="theme-toggle">🌙 Modalità Notte</button>
-</div>
+  
 
 </body>
 </html>
