@@ -1,19 +1,21 @@
-
-
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Linktree di Lara</title>
-   <meta charset="UTF-8">
-    <title>Tabella con Fade In</title>
 
-    
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <style>
+
 * {
   margin: 0;
   padding: 0;
@@ -109,7 +111,7 @@ body.dark-mode .btn {
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  background:  #4b0082;
+  background: #4b0082;
   color: white;
   cursor: pointer;
 }
@@ -125,117 +127,150 @@ body.dark-mode .btn {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
- table {
-width: 50%;
-border-collapse: collapse; /* Elimina i doppi bordi */ margin: 20px 0;
-}
-th, td {
-border: 1px solid #ddd; padding: 10px; text-align: center;
-}
-  
 
+/* TABELLA */
+table {
+  width: 50%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  display: none;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
 
 </style>
 </head>
 
 <body>
-  
 
 <header>
-  <img src="68359A48-F5A4-43E8-BBBF-BADF6AFE99A3.jpeg" 
-       class="profile-img" 
+  <img src="68359A48-F5A4-43E8-BBBF-BADF6AFE99A3.jpeg"
+       class="profile-img"
        alt="Foto profilo di Lara Giuffrida">
+
   <h1>@lara.giuffrida</h1>
   <p>Studentessa</p>
 </header>
 
 <main class="container">
-  <a href="https://www.instagram.com/lara.giuffrida" target="_blank" class="btn">
-    <i class="fab fa-instagram"></i> Seguimi su Instagram
+
+  <a href="https://www.instagram.com/lara.giuffrida"
+     target="_blank"
+     class="btn">
+    <i class="fab fa-instagram"></i>
+    Seguimi su Instagram
   </a>
 
-  <a href="https://github.com/laragiuffrida07-ux" target="_blank" class="btn">
-    <i class="fab fa-github"></i> I miei progetti GitHub
+  <a href="https://github.com/laragiuffrida07-ux"
+     target="_blank"
+     class="btn">
+    <i class="fab fa-github"></i>
+    I miei progetti GitHub
   </a>
 
-  <a href="https://www.linkedin.com/in/lara-giuffrida-2b067a3b9/" target="_blank" class="btn">
-    <i class="fab fa-linkedin"></i> Profilo Professionale
+  <a href="https://www.linkedin.com/in/lara-giuffrida-2b067a3b9/"
+     target="_blank"
+     class="btn">
+    <i class="fab fa-linkedin"></i>
+    Profilo Professionale
   </a>
 
-  <a href="https://youtube.com/@laragiuffrida133" target="_blank" class="btn">
-    <i class="fab fa-youtube"></i> Iscriviti al Canale
+  <a href="https://youtube.com/@laragiuffrida133"
+     target="_blank"
+     class="btn">
+    <i class="fab fa-youtube"></i>
+    Iscriviti al Canale
   </a>
 
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeex2jJ_AZfXdFrh7nMQhdSernGOjs17QsbuH6Joy7ExrR2tQ/viewform?embedded=true" class="btn">
-    <i class="fas fa-envelope"></i> Scrivimi qui
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeex2jJ_AZfXdFrh7nMQhdSernGOjs17QsbuH6Joy7ExrR2tQ/viewform?embedded=true"
+     class="btn">
+    <i class="fas fa-envelope"></i>
+    Scrivimi qui
   </a>
 
-<a href="https://www.vinted.it/member/287342337-lar407" class="btn" target="_blank">
-  <i class="fas fa-tshirt"></i> Guarda il mio Vinted
-</a>
+  <a href="https://www.vinted.it/member/287342337-lar407"
+     class="btn"
+     target="_blank">
+    <i class="fas fa-tshirt"></i>
+    Guarda il mio Vinted
+  </a>
 
-<a href="https://pin.it/6cerrLyGq" class="btn" target="_blank">
-  <i class="fab fa-pinterest"></i> Seguimi su Pinterest
-</a>
+  <a href="https://pin.it/6cerrLyGq"
+     class="btn"
+     target="_blank">
+    <i class="fab fa-pinterest"></i>
+    Seguimi su Pinterest
+  </a>
 
 </main>
-
 
 <div class="theme-switch">
   <button id="theme-toggle">🌙 Modalità Notte</button>
 </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Giorno</th>
-        <th>Orari</th>
-      </tr>
-      </thead>
-    <tbody>
-      <tr><td>Lunedì</td><td>9:00 - 20:00</td></tr>
-      <tr><td>Martedì</td><td>9:00 - 20:00</td></tr>
-      <tr><td>Mercoledì</td><td>9:00 - 21:00</td></tr>
-      <tr><td>Giovedì</td><td>9:00 - 20:00</td></tr>
-      <tr><td>Venerdì</td><td>9:00 - 17:00</td></tr>
-      <tr><td>Sabato</td><td>10:00 - 12:00</td></tr>
-      <tr><td>Domenica</td>  <td>Chiuso</td></tr>
-    </tbody>
-  </table>
 
-  <!-- ============================= -->
-  <!-- FORM CONTATTI -->
-  <form id="contact-form">
-    <input type="text" id="name" placeholder="Nome" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <textarea id="message" placeholder="Messaggio" required></textarea>
-    <button type="submit">Invia</button>
-  </form>
+<table id="miaTabella">
 
-  <!-- LINK AI CREDITS -->
-  <a href="credits.html" class="btn">Vai ai Credits</a>
+<thead>
+<tr>
+  <th>Giorno</th>
+  <th>Orari</th>
+</tr>
+</thead>
 
-</main>
+<tbody>
+<tr><td>Lunedì</td><td>9:00 - 20:00</td></tr>
+<tr><td>Martedì</td><td>9:00 - 20:00</td></tr>
+<tr><td>Mercoledì</td><td>9:00 - 21:00</td></tr>
+<tr><td>Giovedì</td><td>9:00 - 20:00</td></tr>
+<tr><td>Venerdì</td><td>9:00 - 17:00</td></tr>
+<tr><td>Sabato</td><td>10:00 - 12:00</td></tr>
+<tr><td>Domenica</td><td>Chiuso</td></tr>
+</tbody>
 
-<footer></footer>
+</table>
 
-<!-- JQUERY -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- FORM CONTATTI -->
+<form id="contact-form">
 
-<script src="script.js"></script>
-  <footer>
+<input type="text"
+       id="name"
+       placeholder="Nome"
+       required>
+
+<input type="email"
+       id="email"
+       placeholder="Email"
+       required>
+
+<textarea id="message"
+          placeholder="Messaggio"
+          required></textarea>
+
+<button type="submit">Invia</button>
+
+</form>
+
+<!-- LINK AI CREDITS -->
+<a href="credits.html" class="btn">
+  Vai ai Credits
+</a>
+
+<footer>
   <p>Realizzato con ❤️ per il corso di Informatica</p>
 </footer>
-</body>
-</html>
-
-
 
 <script>
+
 // CARICAMENTO
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -261,24 +296,37 @@ document.addEventListener("DOMContentLoaded", function() {
       pulsante.innerText = "🌙 Modalità Notte";
       localStorage.setItem("tema", "light");
     }
+
+  });
+
+  // CONTROLLO EMAIL
+  document.getElementById('contact-form')
+  .addEventListener('submit', function(e) {
+
+    const email =
+    document.getElementById('email').value;
+
+    if (!email.includes('@')) {
+
+      e.preventDefault();
+
+      alert("Inserisci un indirizzo email valido!");
+
+    }
+
   });
 
 });
-  document.getElementById('nomeForm').addEventListener('submit', function(e) {
-const email = document.getElementById('campoEmail').value; if (!email.includes('@')) {
-e.preventDefault(); // Blocca l'invio se l'email è sbagliata
-alert("Inserisci un indirizzo email valido!"); }
-});
-  $(document).ready(function() {
-$("table").hide().fadeIn(2000); // Nasconde la tabella e la mostra in 2 secondi })
-</script>
-<head>
-    <meta charset="UTF-8">
-    <title>Tabella con Fade In</title>
 
-    <!-- Libreria jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-</head>
+// EFFETTO FADE IN TABELLA
+$(document).ready(function() {
+
+  $("#miaTabella").hide().fadeIn(2000);
+
+});
+
+</script>
 
 </body>
 </html>
+
