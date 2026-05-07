@@ -229,9 +229,7 @@ th, td {
 
 </main>
 
-<div class="theme-switch">
-  <button id="theme-toggle">🌙 Modalità Notte</button>
-</div>
+
 
 <!-- TABELLA + STICKER -->
 <div class="tabella-container">
@@ -280,6 +278,53 @@ th, td {
 </a>
 
 <script>
+  // CARICAMENTO
+document.addEventListener("DOMContentLoaded", function() {
+
+  alert("Benvenuto nel mio Linktree!");
+
+  const pulsante = document.getElementById('theme-toggle');
+  const corpo = document.body;
+
+  // Mantiene il tema salvato
+  if (localStorage.getItem("tema") === "dark") {
+    corpo.classList.add("dark-mode");
+    pulsante.innerText = "☀️ Modalità Luce";
+  }
+
+  pulsante.addEventListener('click', () => {
+
+    corpo.classList.toggle('dark-mode');
+
+    if (corpo.classList.contains('dark-mode')) {
+      pulsante.innerText = "☀️ Modalità Luce";
+      localStorage.setItem("tema", "dark");
+    } else {
+      pulsante.innerText = "🌙 Modalità Notte";
+      localStorage.setItem("tema", "light");
+    }
+
+  });
+
+  // CONTROLLO EMAIL
+  document.getElementById('contact-form')
+  .addEventListener('submit', function(e) {
+
+    const email =
+    document.getElementById('email').value;
+
+    if (!email.includes('@')) {
+
+      e.preventDefault();
+
+      alert("Inserisci un indirizzo email valido!");
+
+    }
+
+  });
+
+});
+
 
 // DARK MODE
 document.getElementById("theme-toggle").addEventListener("click", function() {
