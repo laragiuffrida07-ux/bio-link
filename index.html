@@ -29,7 +29,6 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 40px 20px;
-  transition: all 0.4s ease;
 }
 
 /* HEADER */
@@ -66,22 +65,17 @@ p {
   align-items: center;
   justify-content: center;
   background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
   color: #333;
   text-decoration: none;
   padding: 18px;
   margin-bottom: 15px;
   border-radius: 15px;
-  font-weight: 500;
   font-size: 18px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  animation: slideUp 0.6s ease;
+  transition: 0.3s;
 }
 
 .btn i {
   margin-right: 12px;
-  font-size: 1.4rem;
 }
 
 .btn:hover {
@@ -96,13 +90,6 @@ body.dark-mode {
   color: white;
 }
 
-body.dark-mode .btn {
-  background: rgba(50,50,50,0.8);
-  color: #fff;
-  border: 1px solid #555;
-}
-
-/* BOTTONE SWITCH */
 .theme-switch {
   margin-top: 20px;
 }
@@ -116,36 +103,75 @@ body.dark-mode .btn {
   cursor: pointer;
 }
 
-/* ANIMAZIONI */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* TABELLA + STICKER */
+.tabella-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 /* TABELLA */
-table {
-  width: 50%;
+#miaTabella {
+  width: 350px;
   border-collapse: collapse;
-  margin: 20px 0;
-  display: none;
+  text-align: center;
+  background: rgba(255,255,255,0.7);
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 th, td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: center;
+}
+
+/* STICKER */
+.sticker{
+  width: 100px;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ANIMAZIONE STICKER */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* FORM */
+#contact-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 30px;
+}
+
+#contact-form input,
+#contact-form textarea{
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+#contact-form button{
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #4b0082;
+  color: white;
+  cursor: pointer;
+}
+
+/* ANIMAZIONI */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 </style>
@@ -154,62 +180,32 @@ th, td {
 <body>
 
 <header>
+
   <img src="68359A48-F5A4-43E8-BBBF-BADF6AFE99A3.jpeg"
        class="profile-img"
-       alt="Foto profilo di Lara Giuffrida">
+       alt="Foto profilo">
 
   <h1>@lara.giuffrida</h1>
   <p>Studentessa</p>
+
 </header>
 
 <main class="container">
 
-  <a href="https://www.instagram.com/lara.giuffrida"
-     target="_blank"
-     class="btn">
-    <i class="fab fa-instagram"></i>
-    Seguimi su Instagram
+  <a href="https://www.instagram.com/lara.giuffrida" class="btn">
+    <i class="fab fa-instagram"></i> Instagram
   </a>
 
-  <a href="https://github.com/laragiuffrida07-ux"
-     target="_blank"
-     class="btn">
-    <i class="fab fa-github"></i>
-    I miei progetti GitHub
+  <a href="https://github.com/laragiuffrida07-ux" class="btn">
+    <i class="fab fa-github"></i> GitHub
   </a>
 
-  <a href="https://www.linkedin.com/in/lara-giuffrida-2b067a3b9/"
-     target="_blank"
-     class="btn">
-    <i class="fab fa-linkedin"></i>
-    Profilo Professionale
+  <a href="https://www.linkedin.com/in/lara-giuffrida-2b067a3b9/" class="btn">
+    <i class="fab fa-linkedin"></i> LinkedIn
   </a>
 
-  <a href="https://youtube.com/@laragiuffrida133"
-     target="_blank"
-     class="btn">
-    <i class="fab fa-youtube"></i>
-    Iscriviti al Canale
-  </a>
-
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeex2jJ_AZfXdFrh7nMQhdSernGOjs17QsbuH6Joy7ExrR2tQ/viewform?embedded=true"
-     class="btn">
-    <i class="fas fa-envelope"></i>
-    Scrivimi qui
-  </a>
-
-  <a href="https://www.vinted.it/member/287342337-lar407"
-     class="btn"
-     target="_blank">
-    <i class="fas fa-tshirt"></i>
-    Guarda il mio Vinted
-  </a>
-
-  <a href="https://pin.it/6cerrLyGq"
-     class="btn"
-     target="_blank">
-    <i class="fab fa-pinterest"></i>
-    Seguimi su Pinterest
+  <a href="https://youtube.com/@laragiuffrida133" class="btn">
+    <i class="fab fa-youtube"></i> YouTube
   </a>
 
 </main>
@@ -217,6 +213,9 @@ th, td {
 <div class="theme-switch">
   <button id="theme-toggle">🌙 Modalità Notte</button>
 </div>
+
+<!-- TABELLA + STICKER -->
+<div class="tabella-container">
 
 <table id="miaTabella">
 
@@ -239,94 +238,37 @@ th, td {
 
 </table>
 
-<!-- FORM CONTATTI -->
+<!-- STICKER ANIMATO -->
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExajZzbzY5dDBmb3poc3dncjZlZnJuYWQxdTloZ2NtZGdvbjUxdzZ5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/auvPdJqCpMA4E/giphy.gif"
+     class="sticker"
+     alt="Sticker animato">
+
+</div>
+
+<!-- FORM -->
 <form id="contact-form">
 
-<input type="text"
-       id="name"
-       placeholder="Nome"
-       required>
-
-<input type="email"
-       id="email"
-       placeholder="Email"
-       required>
-
-<textarea id="message"
-          placeholder="Messaggio"
-          required></textarea>
+<input type="text" placeholder="Nome" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Messaggio" required></textarea>
 
 <button type="submit">Invia</button>
 
 </form>
 
-<!-- LINK AI CREDITS -->
-<a href="credits.html" class="btn">
-  Vai ai Credits
-</a>
-
-<footer>
-  <p>Realizzato con ❤️ per il corso di Informatica</p>
-</footer>
-
 <script>
 
-// CARICAMENTO
-document.addEventListener("DOMContentLoaded", function() {
-
-  alert("Benvenuto nel mio Linktree!");
-
-  const pulsante = document.getElementById('theme-toggle');
-  const corpo = document.body;
-
-  // Mantiene il tema salvato
-  if (localStorage.getItem("tema") === "dark") {
-    corpo.classList.add("dark-mode");
-    pulsante.innerText = "☀️ Modalità Luce";
-  }
-
-  pulsante.addEventListener('click', () => {
-
-    corpo.classList.toggle('dark-mode');
-
-    if (corpo.classList.contains('dark-mode')) {
-      pulsante.innerText = "☀️ Modalità Luce";
-      localStorage.setItem("tema", "dark");
-    } else {
-      pulsante.innerText = "🌙 Modalità Notte";
-      localStorage.setItem("tema", "light");
-    }
-
-  });
-
-  // CONTROLLO EMAIL
-  document.getElementById('contact-form')
-  .addEventListener('submit', function(e) {
-
-    const email =
-    document.getElementById('email').value;
-
-    if (!email.includes('@')) {
-
-      e.preventDefault();
-
-      alert("Inserisci un indirizzo email valido!");
-
-    }
-
-  });
-
+// DARK MODE
+document.getElementById("theme-toggle").addEventListener("click", function() {
+  document.body.classList.toggle("dark-mode");
 });
 
-// EFFETTO FADE IN TABELLA
+// FADE TABELLA
 $(document).ready(function() {
-
   $("#miaTabella").hide().fadeIn(2000);
-
 });
 
 </script>
 
 </body>
 </html>
-
